@@ -57,16 +57,18 @@
   # Bootloader.
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-614e5062-18e6-4565-b480-41610cc006c2".device =
-    "/dev/disk/by-uuid/614e5062-18e6-4565-b480-41610cc006c2";
-  boot.initrd.systemd.enable = true;
-  boot.initrd.availableKernelModules = [
-    "i2c_hid"
-    "hid_generic"
-    "usbhid"
-    "xhci_hcd"
-    "evdev"
-  ];
+  /*
+    boot.initrd.luks.devices."luks-614e5062-18e6-4565-b480-41610cc006c2".device =
+      "/dev/disk/by-uuid/614e5062-18e6-4565-b480-41610cc006c2";
+    boot.initrd.systemd.enable = true;
+    boot.initrd.availableKernelModules = [
+      "i2c_hid"
+      "hid_generic"
+      "usbhid"
+      "xhci_hcd"
+      "evdev"
+    ];
+  */
 
   networking.hostName = "mashnix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

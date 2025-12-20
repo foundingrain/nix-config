@@ -19,6 +19,11 @@
       enable = true;
     };
 
+    btop = {
+      enable = true;
+      settings.vim_keys = true;
+    };
+
     fish = {
       enable = true;
       interactiveShellInit = ''
@@ -36,9 +41,9 @@
       enable = true;
       settings = {
         shell = "fish";
-	font_size = 12;
-	background_opacity = 0.8;
-	confirm_os_window_close = -1;
+        font_size = 12;
+        background_opacity = 0.8;
+        confirm_os_window_close = -1;
       };
       themeFile = "Cyberpunk-Neon";
     };
