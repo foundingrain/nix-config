@@ -33,8 +33,8 @@
 
     git = {
       enable = true;
-      userName = "foundingrain";
-      userEmail = "foundingrain@pm.me";
+      settings.user.name = "foundingrain";
+      settings.user.email = "foundingrain@pm.me";
     };
 
     kitty = {

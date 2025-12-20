@@ -5,8 +5,8 @@
   ...
 }:
 let
-  isGnome = (config.services.xserver.desktopManager.gnome.enable or false);
-  isPlasma = (config.services.xserver.desktopManager.plasma6.enable or false);
+  isGnome = (config.services.desktopManager.gnome.enable or false);
+  isPlasma = (config.services.desktopManager.plasma6.enable or false);
   isNiri = config.services.displayManager.defaultSession == "niri";
 
   polkitExec =
