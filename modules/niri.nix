@@ -1,46 +1,26 @@
 {
+  config,
+  lib,
   pkgs,
   ...
 }:
+let
+  isGnome = (config.services.xserver.desktopManager.gnome.enable or false);
+  isPlasma = (config.services.xserver.desktopManager.plasma6.enable or false);
+  isNiri = config.services.displayManager.defaultSession == "niri";
 
+  polkitExec =
+    if isGnome then
+      "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
+    else if isPlasma then
+      "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1"
+    else
+      "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+in
 {
-
-  systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
-    };
-  };
-
-  /*
-    systemd = {
-    user.services.polkit-kde-authentication-agent-1 = {
-      description = "polkit-kde-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-      serviceConfig = {
-          Type = "simple";
-          ExecStart = "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1";
-          Restart = "on-failure";
-          RestartSec = 1;
-          TimeoutStopSec = 10;
-        };
-      };
-    };
-  */
-
   environment.systemPackages = with pkgs; [
     alacritty
+    blueman
     brightnessctl
     cliphist
     fuzzel
@@ -50,7 +30,6 @@
     nwg-look
     pavucontrol
     sunsetr
-    # swaybg
     swww
     swaylock-effects
     swaylock-fancy
@@ -61,8 +40,26 @@
 
   programs = {
     niri.enable = true;
-    waybar.enable = true;
+    blueman.enable = lib.mkIf isNiri true;
   };
 
-  services.blueman.enable = true;
+  # Install appropriate polkit
+  systemd.user.services.polkit-auth-agent = {
+    description = "Polkit authentication agent for niri";
+    wantedBy = [ "graphical-session.target" ];
+    wants = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = polkitExec;
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+  };
+
+  # For populating file associations in plasma apps in niri
+  environment.etc."/xdg/menus/applications.menu" = lib.mkIf isPlasma {
+    text = builtins.readFile "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+  };
 }
