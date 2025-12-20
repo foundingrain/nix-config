@@ -40,6 +40,9 @@ in
 
   programs = {
     niri.enable = true;
+  };
+
+  services = {
     blueman.enable = lib.mkIf isNiri true;
   };
 
