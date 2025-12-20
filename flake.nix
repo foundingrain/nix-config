@@ -1,5 +1,5 @@
 {
-  description = "Flake for yogurtnix";
+  description = "Flake for mashnix";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
