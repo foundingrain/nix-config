@@ -9,6 +9,6 @@
 
   environment.systemPackages = with pkgs; [
     libreoffice-qt6-fresh
-    qt6ct
+    # qt6ct
   ];
 }

@@ -10,36 +10,36 @@
     ./hardware-configuration.nix
 
     # Modules
-    ./modules/corepackages.nix
-    ./modules/development.nix
-    ./modules/extra.nix
-    ./modules/fonts.nix
-    ./modules/gaming.nix
-    ./modules/limine.nix
-    ./modules/mullvad.nix
-    ./modules/plymouth.nix
-    ./modules/nix-utils.nix
-    ./modules/school.nix
-    ./modules/sdr.nix
-    ./modules/social.nix
-    ./modules/tailscale.nix
-    ./modules/temp.nix
-    ./modules/vm.nix
+    ../../modules/corepackages.nix
+    ../../modules/development.nix
+    ../../modules/extra.nix
+    ../../modules/fonts.nix
+    ../../modules/gaming.nix
+    ../../modules/limine.nix
+    ../../modules/mullvad.nix
+    ../../modules/plymouth.nix
+    ../../modules/nix-utils.nix
+    ../../modules/school.nix
+    ../../modules/sdr.nix
+    ../../modules/social.nix
+    ../../modules/tailscale.nix
+    ../../modules/temp.nix
+    ../../modules/vm.nix
 
-    # ./modules/gnome-rdp.nix
+    # ../../modules/gnome-rdp.nix
 
     # Desktop Environments
-    ./modules/cosmic.nix
-    # ./modules/gnome.nix
-    # ./modules/hyprland.nix
-    ./modules/niri.nix
-    #  ./modules/plasma.nix
+    # ../../modules/cosmic.nix
+    # ../../modules/gnome.nix
+    # ../../modules/hyprland.nix
+    ../../modules/niri.nix
+    ../../modules/plasma.nix
 
     # Graphics
-    #  ./modules/nvidia.nix
+    #  ../../modules/nvidia.nix
 
     # Excluded packages
-    # ./modules/exclude.nix
+    # ../../modules/exclude.nix
   ];
 
   # Flakes
