@@ -12,11 +12,12 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.dash-to-panel
     gnomeExtensions.notification-timeout
-   # gnomeExtensions.paperwm
+    # gnomeExtensions.paperwm
     gnomeExtensions.system-monitor-next
     gnomeExtensions.tiling-assistant
     gnomeExtensions.user-themes
-   # gnomeExtensions.window-list
+    gnomeExtensions.vertical-workspaces
+    # gnomeExtensions.window-list
     gthumb
     zenity
   ];
