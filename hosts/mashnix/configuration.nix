@@ -10,14 +10,13 @@
     ./hardware-configuration.nix
 
     # Modules
+    ../../modules/boot.nix
     ../../modules/corepackages.nix
     ../../modules/development.nix
     ../../modules/extra.nix
     ../../modules/fonts.nix
     ../../modules/gaming.nix
-    ../../modules/limine.nix
     ../../modules/mullvad.nix
-    ../../modules/plymouth.nix
     ../../modules/nix-utils.nix
     ../../modules/school.nix
     ../../modules/sdr.nix
