@@ -22,5 +22,6 @@
     unzip
     vlc
     wget
+    wl-clipboard
   ];
 }
