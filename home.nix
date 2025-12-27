@@ -1,8 +1,15 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  hmUser,
+  ...
+}:
 
 {
-  home.username = "neo";
-  home.homeDirectory = "/home/neo";
+  # home.username = "neo";
+  # home.homeDirectory = "/home/neo";
+  home.username = hmUser;
+  home.homeDirectory = "/home/${hmUser}";
   home.sessionVariables = {
     EDITOR = "nvim";
     SAL_USE_VCLPLUGIN = "gtk3";

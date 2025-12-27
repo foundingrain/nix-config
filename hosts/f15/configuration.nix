@@ -20,7 +20,7 @@
     # ../../modules/plasma.nix
     # ../../modules/hyprland.nix
     ../../modules/mullvad.nix
-    ../../modules/rdp.nix
+    # ../../modules/rdp.nix
     # ../../modules/school.nix
     ../../modules/sdr.nix
     ../../modules/social.nix
