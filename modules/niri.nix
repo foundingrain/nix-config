@@ -35,6 +35,7 @@ in
     swaylock-fancy
     swaynotificationcenter
     xwayland-satellite
+    waybar
     wlogout
   ];
 
