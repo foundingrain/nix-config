@@ -40,10 +40,11 @@ in
 
   programs = {
     niri.enable = true;
+    waybar.enable = true;
   };
 
   services = {
-    blueman.enable = lib.mkIf isNiri true;
+    blueman.enable = true;
   };
 
   # Install appropriate polkit
