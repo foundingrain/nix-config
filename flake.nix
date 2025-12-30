@@ -41,6 +41,8 @@
             ./hosts/${hostName}/configuration.nix
             # ./hosts/${hostName}/hardware-configuration.nix
 
+            nix-index-database.nixosModules.default
+
             home-manager.nixosModules.home-manager
             (
               { config, ... }:
@@ -60,15 +62,16 @@
                     ./home.nix
                     inputs.kickstart-nixvim.homeManagerModules.default
                     zen-browser.homeModules.beta
+                    nix-index-database.homeModules.default
                   ];
 
                   programs.nixvim.enable = true;
                   programs.zen-browser.enable = true;
+                  programs.nix-index.enable = true;
+                  programs.command-not-found.enable = false;
                 };
               }
             )
-
-            nix-index-database.nixosModules.nix-index
           ];
         };
     in

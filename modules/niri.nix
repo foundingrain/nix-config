@@ -41,7 +41,7 @@ in
 
   programs = {
     niri.enable = true;
-    waybar.enable = true;
+    # waybar.enable = true;
   };
 
   services = {
