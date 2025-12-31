@@ -2,7 +2,10 @@
 {
   boot.loader = {
     efi.canTouchEfiVariables = true;
-    limine.enable = true;
-    # limine.style.wallpapers = [  ];
+    limine = {
+      enable = true;
+      rememberLastEntry = true;
+      # limine.style.wallpapers = [  ];
+    };
   };
 }
