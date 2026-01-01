@@ -23,7 +23,11 @@ in
     EDITOR = "nvim";
     SAL_USE_VCLPLUGIN = "gtk3";
   };
-  home.shellAliases = { } // mvpnAlias // tsAlias;
+  home.shellAliases = {
+    gs = "git status";
+  }
+  // mvpnAlias
+  // tsAlias;
 
   programs = {
     nix-index = {
