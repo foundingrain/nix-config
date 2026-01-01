@@ -4,7 +4,7 @@
     efi.canTouchEfiVariables = true;
     limine = {
       enable = true;
-      rememberLastEntry = true;
+      # rememberLastEntry = true; # might not exist?
       # limine.style.wallpapers = [  ];
     };
   };
