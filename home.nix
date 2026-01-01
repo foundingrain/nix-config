@@ -1,10 +1,19 @@
 {
   config,
+  lib,
   pkgs,
   hmUser,
+  osConfig ? { },
   ...
 }:
 
+let
+  mullvadEnabled = (osConfig.services.mullvad-vpn.enable or false);
+  tailscaleEnabled = (osConfig.services.tailscale.enable or false);
+
+  mvpnAlias = lib.optionalAttrs tailscaleEnabled { ts = "tailscale"; };
+  tsAlias = lib.optionalAttrs tailscaleEnabled { ts = "tailscale"; };
+in
 {
   # home.username = "neo";
   # home.homeDirectory = "/home/neo";
@@ -14,6 +23,7 @@
     EDITOR = "nvim";
     SAL_USE_VCLPLUGIN = "gtk3";
   };
+  home.shellAliases = { } // mvpnAlias // tsAlias;
 
   programs = {
     nix-index = {
