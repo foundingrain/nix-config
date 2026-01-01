@@ -206,7 +206,7 @@
       gcc
       valgrind
       #jetbrains.idea-ultimate
-      scribus
+      # scribus
       # CaC
       #opensc
       #ccid
