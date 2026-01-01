@@ -11,7 +11,7 @@ let
   mullvadEnabled = (osConfig.services.mullvad-vpn.enable or false);
   tailscaleEnabled = (osConfig.services.tailscale.enable or false);
 
-  mvpnAlias = lib.optionalAttrs tailscaleEnabled { ts = "tailscale"; };
+  mvpnAlias = lib.optionalAttrs mullvadEnabled { ts = "tailscale"; };
   tsAlias = lib.optionalAttrs tailscaleEnabled { ts = "tailscale"; };
 in
 {
