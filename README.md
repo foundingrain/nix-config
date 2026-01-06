@@ -1,3 +1,3 @@
 ## My NixOS configuration repo
 
-Finally combined into one giant repo
+Finally combined my configs to one repo.. continual work in progress
