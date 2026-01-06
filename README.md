@@ -7,4 +7,5 @@ Todo list:
 * Declarative Niri dots
 * Hyprland options
 * Secrets management with sops-nix or agenix
+* Personal theming files (some public, some through above)
 * Reorganize modules folder into sub-sections
