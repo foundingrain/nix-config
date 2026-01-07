@@ -9,3 +9,4 @@ Todo list:
 * Secrets management with sops-nix or agenix
 * Personal theming files (some public, some through above)
 * Reorganize modules folder into sub-sections
+* More home-manager dots
