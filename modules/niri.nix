@@ -25,6 +25,7 @@ in
     cliphist
     fuzzel
     kanshi
+    nautilus
     networkmanagerapplet
     niriswitcher
     nwg-look
