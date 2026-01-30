@@ -12,6 +12,7 @@
     # ./modules/ai.nix
     ../../modules/corepackages.nix
     ../../modules/cosmic.nix
+    ../../modules/development.nix
     # ../../modules/weylus.nix
     ../../modules/extra.nix
     ../../modules/gaming.nix
