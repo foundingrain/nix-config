@@ -12,5 +12,11 @@
     # Python
     python3
     go
+
+    # Research
+    jetbrains.rider
+    gcc
+    valgrind
+    dotnet-sdk
   ];
 }

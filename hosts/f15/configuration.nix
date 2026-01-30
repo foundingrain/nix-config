@@ -203,8 +203,8 @@
       ruffle
       # lightspark
       # python3
-      gcc
-      valgrind
+      # gcc
+      # valgrind
       #jetbrains.idea-ultimate
       # scribus
       # CaC
