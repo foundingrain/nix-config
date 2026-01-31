@@ -128,9 +128,6 @@
     ];
     packages = with pkgs; [
       bibata-cursors
-      # protonvpn-gui
-      kdePackages.kdenlive
-      #  thunderbird
     ];
   };
 
