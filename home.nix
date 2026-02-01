@@ -33,8 +33,8 @@ in
     enable = true;
     colorScheme = "dark";
     cursorTheme = {
-      name = "Vanilla-DMZ";
-      package = pkgs.vanilla-dmz;
+      name = "Vimix-white-cursors";
+      package = pkgs.vimix-cursors;
       size = 16;
     };
     iconTheme = {
