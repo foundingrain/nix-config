@@ -23,6 +23,7 @@ in
     blueman
     brightnessctl
     cliphist
+    ffmpegthumbnailer
     fuzzel
     kanshi
     nautilus
@@ -35,6 +36,7 @@ in
     swaylock-effects
     swaylock-fancy
     swaynotificationcenter
+    totem
     xwayland-satellite
     waybar
     wlogout
