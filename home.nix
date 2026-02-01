@@ -29,6 +29,20 @@ in
   // mvpnAlias
   // tsAlias;
 
+  gtk = {
+    enable = true;
+    colorScheme = "dark";
+    cursorTheme = {
+      name = "Vanilla-DMZ";
+      package = pkgs.vanilla-dmz;
+      size = 16;
+    };
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
+
   programs = {
     nix-index = {
       enable = true;
