@@ -3,7 +3,6 @@
 Finally combined my configs to one repo.. continual work in progress
 
 Todo list:
-* Fix wifi driver not loading sometimes with host: mash (testing fix now)
 * Add primary configuration.nix to root dir, minimize host-specific configuration.nix's
 * Declarative Niri dots
 * Hyprland options
