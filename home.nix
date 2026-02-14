@@ -83,6 +83,15 @@ in
       themeFile = "Cyberpunk-Neon";
     };
 
+    nixvim = {
+      enable = true;
+      plugins.treesitter = {
+        enable = true;
+        highlight.enable = true;
+        indent.enable = true;
+      };
+    };
+
     ranger = {
       enable = true;
       extraConfig = ''
