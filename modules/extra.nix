@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    kdePackages.kdenlive
     krita
     libreoffice-fresh
     obs-studio

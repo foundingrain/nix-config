@@ -11,7 +11,7 @@
     protontricks
     protonup-qt
     winetricks
-    wineWowPackages.staging
+    wineWow64Packages.staging
   ];
 
   programs.steam = {
