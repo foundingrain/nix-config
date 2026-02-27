@@ -20,5 +20,8 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     extraCompatPackages = with pkgs; [ proton-ge-bin ];
     localNetworkGameTransfers.openFirewall = true;
+    extraPackages = with pkgs; [
+      nss
+    ];
   };
 }

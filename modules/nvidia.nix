@@ -2,7 +2,7 @@
 
 {
   # Enable OpenGL
-  hardware.graphics = { 
+  hardware.graphics = {
     enable = true;
   };
 
@@ -24,6 +24,6 @@
     # Should only be set to false if GPU is older than 20-Series.
     open = true;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 }

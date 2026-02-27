@@ -2,7 +2,8 @@
 
 let
   disabledPackages = [
-    # "protonvpn-gui"
+    "krita"
+    "gqrx"
   ];
 in
 {
