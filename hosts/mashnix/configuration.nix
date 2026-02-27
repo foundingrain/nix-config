@@ -39,7 +39,7 @@
     #  ../../modules/nvidia.nix
 
     # Excluded packages
-    # ../../modules/exclude.nix
+    ../../modules/exclude.nix
   ];
 
   # Flakes
