@@ -74,7 +74,7 @@ in
 
     kitty = {
       enable = true;
-      font.name = "0xProto Nerd Font";
+      font.name = "FiraCode Nerd Font";
       font.size = 13;
       settings = {
         shell = "fish";
