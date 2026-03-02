@@ -9,5 +9,6 @@
     nerd-fonts._0xproto
     miracode
     monocraft
+    noto-fonts
   ];
 }

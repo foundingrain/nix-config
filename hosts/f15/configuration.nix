@@ -15,6 +15,7 @@
     ../../modules/development.nix
     # ../../modules/weylus.nix
     ../../modules/extra.nix
+    ../../modules/fonts.nix
     ../../modules/gaming.nix
     ../../modules/gnome.nix
     ../../modules/niri.nix
@@ -327,16 +328,6 @@
   # services.jellyfin.enable = true;
   # services.jellyfin.openFirewall = true;
   # services.jellyfin.user = "stimkyyy";
-
-  # Fonts
-  fonts.packages = with pkgs; [
-    font-awesome
-    nerd-fonts.fira-code
-    nerd-fonts.fira-mono
-    #nerdfonts
-    nerd-fonts.jetbrains-mono
-    noto-fonts
-  ];
 
   # CaC
   #services.pcscd.enable = true;
