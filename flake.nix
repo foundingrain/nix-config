@@ -13,7 +13,6 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
     kickstart-nixvim.url = "github:JMartJonesy/kickstart.nixvim";
-    waybar-niri-workspaces-enhanced.url = "github:justbuchanan/waybar-niri-workspaces-enhanced";
     zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
   };
 
@@ -23,7 +22,6 @@
       nixpkgs,
       home-manager,
       nix-index-database,
-      waybar-niri-workspaces-enhanced,
       zen-browser,
       ...
     }:
@@ -64,14 +62,12 @@
                     ./home.nix
                     inputs.kickstart-nixvim.homeManagerModules.default
                     nix-index-database.homeModules.default
-                    waybar-niri-workspaces-enhanced.homeModules.default
                     zen-browser.homeModules.beta
                   ];
 
                   programs.command-not-found.enable = false;
                   programs.nixvim.enable = true;
                   programs.nix-index.enable = true;
-                  programs.waybar.niri-workspaces-enhanced.enable = true;
                   programs.zen-browser.enable = true;
                 };
               }
