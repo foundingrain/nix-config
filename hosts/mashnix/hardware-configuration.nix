@@ -50,18 +50,20 @@
     ];
   };
 
-  fileSystems."/run/media/neo/wd_black" = {
-    device = "/dev/disk/by-uuid/01DC6296C8DAEF40";
-    fsType = "ntfs3";
-    options = [
-      "rw"
-      "uid=1000"
-      "gid=100"
-      "nofail"
-      "x-systemd.automount"
-      "windows_names"
-    ];
-  };
+  /*
+    fileSystems."/run/media/neo/wd_black" = {
+      device = "/dev/disk/by-uuid/01DC6296C8DAEF40";
+      fsType = "ntfs3";
+      options = [
+        "rw"
+        "uid=1000"
+        "gid=100"
+        "nofail"
+        "x-systemd.automount"
+        "windows_names"
+      ];
+    };
+  */
 
   swapDevices = [
     {
