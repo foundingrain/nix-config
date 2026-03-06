@@ -11,13 +11,13 @@
 
     # ./modules/ai.nix
     ../../modules/corepackages.nix
-    # ../../modules/cosmic.nix
+    ../../modules/cosmic.nix
     ../../modules/development.nix
     # ../../modules/weylus.nix
     ../../modules/extra.nix
     ../../modules/fonts.nix
     ../../modules/gaming.nix
-    ../../modules/gnome.nix
+    # ../../modules/gnome.nix
     ../../modules/niri.nix
     # ../../modules/plasma.nix
     # ../../modules/hyprland.nix
