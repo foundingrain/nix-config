@@ -2,8 +2,8 @@
 
 let
   disabledPackages = [
-    "krita"
-    "gqrx"
+    #"krita"
+    #"gqrx"
   ];
 in
 {

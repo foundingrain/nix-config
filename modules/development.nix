@@ -14,9 +14,9 @@
     go
 
     # Research
-    jetbrains.rider
+    # jetbrains.rider
     gcc
     valgrind
-    dotnet-sdk
+    # dotnet-sdk
   ];
 }

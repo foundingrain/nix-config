@@ -32,8 +32,8 @@
     # ../../modules/cosmic.nix
     ../../modules/gnome.nix
     # ../../modules/hyprland.nix
-    # ../../modules/niri.nix
-    ../../modules/plasma.nix
+    ../../modules/niri.nix
+    # ../../modules/plasma.nix
 
     # Graphics
     #  ../../modules/nvidia.nix
