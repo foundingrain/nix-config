@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "boot-assets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773194943,
+        "narHash": "sha256-F7KrGZugA0UGx23eGYH+850Ov5Z6mYzdVhIe80nlYr0=",
+        "ref": "refs/heads/main",
+        "rev": "05a9cf5a18649996d2c9a623033e244630bf46ff",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/foundingrain/private-boot-assets.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/foundingrain/private-boot-assets.git"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -210,6 +226,7 @@
     },
     "root": {
       "inputs": {
+        "boot-assets": "boot-assets",
         "home-manager": "home-manager",
         "kickstart-nixvim": "kickstart-nixvim",
         "nix-index-database": "nix-index-database",

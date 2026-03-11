@@ -14,6 +14,11 @@
 
     kickstart-nixvim.url = "github:JMartJonesy/kickstart.nixvim";
     zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
+
+    boot-assets = {
+      url = "git+ssh://git@github.com/foundingrain/private-boot-assets.git";
+      flake = false;
+    };
   };
 
   outputs =
@@ -23,6 +28,7 @@
       home-manager,
       nix-index-database,
       zen-browser,
+      boot-assets,
       ...
     }:
     let
@@ -39,6 +45,9 @@
             { networking.hostName = hostName; }
 
             ./hosts/${hostName}/configuration.nix
+            {
+              my.boot.imageDir = boot-assets;
+            }
             # ./hosts/${hostName}/hardware-configuration.nix
 
             nix-index-database.nixosModules.default
