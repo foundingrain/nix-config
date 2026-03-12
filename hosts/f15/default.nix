@@ -5,70 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-
-    # ./modules/ai.nix
-    ../../modules/corepackages.nix
-    ../../modules/cosmic.nix
-    ../../modules/development.nix
-    # ../../modules/weylus.nix
-    ../../modules/extra.nix
-    ../../modules/fonts.nix
-    ../../modules/gaming.nix
-    # ../../modules/gnome.nix
-    ../../modules/niri.nix
-    # ../../modules/plasma.nix
-    # ../../modules/hyprland.nix
-    ../../modules/mullvad.nix
-    # ../../modules/rdp.nix
-    # ../../modules/school.nix
-    ../../modules/sdr.nix
-    ../../modules/social.nix
-    ../../modules/tailscale.nix
-    ../../modules/vm.nix
-
-    # ../../modules/lineage.nix
-
-    ../../modules/exclude.nix
-  ];
-
-  # Flakes
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  programs.nh.enable = true;
-
-  # flatpak
-  services.flatpak.enable = true;
-
-  # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
-  boot.loader.limine.enable = true;
-  /*
-    boot.loader.limine.style.wallpapers = [
-      ./IMG_9873.PNG
-    ];
-  */
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.plymouth = {
-    enable = true;
-    theme = "breeze";
-    # logo = ./GH-Neo-static.png;
-  };
-
-  boot.consoleLogLevel = 3;
-  boot.initrd.verbose = false;
-  boot.kernelParams = [
-    "quiet"
-    "splash"
-  ];
 
   networking.hostName = "f15"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -97,40 +36,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-  /*
-     # Enable Hyprland
-     programs.hyprland = {
-       enable = true;
-       xwayland.enable = true;
-     };
-
-     # Enable polkit for Hyprland
-    # security.polkit.enable = true;
-
-     # Systemd service for kde-polkit
-     systemd = {
-       user.services.polkit-gnome-authentication-agent-1 = {
-         description = "polkit-gnome-authentication-agent-1";
-         wantedBy = [ "graphical-session.target" ];
-         wants = [ "graphical-session.target" ];
-         after = [ "graphical-session.target" ];
-         serviceConfig = {
-           Type = "simple";
-           ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-           Restart = "on-failure";
-           RestartSec = 1;
-           TimeoutStopSec = 10;
-         };
-       };
-     };
-  */
-
-  # Enable GNOME Theme for QT Applications.
-  # qt = {
-  #   enable = true;
-  #   platformTheme = "qt5ct";
-  #  style = "adwaita-dark";
-  # };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -197,75 +102,10 @@
       "lp"
       "input"
     ];
-    packages = with pkgs; [
-      #nvtopPackages.nvidia
-      bibata-cursors
-      #ventoy-full
-      protonvpn-gui
-      ruffle
-      # lightspark
-      # python3
-      # gcc
-      # valgrind
-      #jetbrains.idea-ultimate
-      # scribus
-      # CaC
-      #opensc
-      #ccid
-      #pcsctools
-      # KDE
-      kdePackages.kdenlive
-      # korganizer
-      # libsForQt5.kservice # Will be depreciated!!
-      # Hyprland
-      #mako
-      #gammastep
-      # hyprland-qtutils
-      # wl-gammarelay-rs
-      # hyprcursor
-      #  lxappearance
-      #  nwg-look
-      #  qt5ct
-      #  qt6ct
-      # hyprlock
-      #  thunderbird
-    ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    libsForQt5.qtstyleplugin-kvantum
-    libsForQt5.qt5ct
-    qt6Packages.qt6ct
-    nwg-look
-    # cudaPackages.cudatoolkit
-    #flk-zen-browser
-    #  pkgs.jellyfin
-    #  pkgs.jellyfin-web
-    #  pkgs.jellyfin-ffmpeg
-    # Flakes
-  ];
-
-  # Disable hardware cursors
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = 1;
-    NIXOS_OZONE_WL = "1";
-  };
-
-  #Qt5 Config
-  nixpkgs.config.qt5 = {
-    enable = true;
-    platformTheme = "qt5ct";
-    style = {
-      package = pkgs.utterly-nord-plasma;
-      name = "Utterly Nord Plasma";
-    };
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -323,26 +163,4 @@
       nvidiaBusId = "PCI:0:1:0";
     };
   };
-
-  # Jellyfin
-  # services.jellyfin.enable = true;
-  # services.jellyfin.openFirewall = true;
-  # services.jellyfin.user = "stimkyyy";
-
-  # CaC
-  #services.pcscd.enable = true;
-
-  # Thunar and services
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [
-      thunar-archive-plugin
-      thunar-volman
-    ];
-  };
-  services.gvfs.enable = true;
-  services.tumbler.enable = true;
-
-  # RGB control
-  # services.hardware.openrgb.enable = true;
 }

@@ -6,58 +6,10 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
-
-    # Modules
-    # ./modules/autologin.nix
-    ../../modules/corepackages.nix
-    # ./modules/development.nix
-    ../../modules/extra.nix
-    ../../modules/fonts.nix
-    # ./modules/gaming.nix
-    ../../modules/limine.nix
-    ../../modules/mullvad.nix
-    ../../modules/plymouth.nix
-    ../../modules/nix-utils.nix
-    ../../modules/school.nix
-    ../../modules/sdr.nix
-    ../../modules/social.nix
-    ../../modules/tailscale.nix
-    # ../../modules/temp.nix
-    ../../modules/vm.nix
-
-    # ../../modules/gnome-rdp.nix
-
-    # Desktop Environments
-    # ../../modules/cosmic.nix
-    # ../../modules/gnome.nix
-    # ../../modules/hyprland.nix
-    ../../modules/niri.nix
-    ../../modules/plasma.nix
-
-    # Graphics
-    #  ../../modules/nvidia.nix
-
-    # Excluded packages
-    # ../../modules/exclude.nix
   ];
 
-  # Flakes
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  #Flatpak
-  # services.flatpak.enable = true;
-
-  # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "thonknix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -126,12 +78,6 @@
       "networkmanager"
       "wheel"
       "input"
-    ];
-    packages = with pkgs; [
-      bibata-cursors
-      # protonvpn-gui
-      kdePackages.kdenlive
-      #  thunderbird
     ];
   };
 

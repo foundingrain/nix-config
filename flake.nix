@@ -32,6 +32,29 @@
       ...
     }:
     let
+      commonModules = [
+        ./modules/nix.nix
+
+        ./modules/boot.nix
+        ./modules/corepackages.nix
+        ./modules/development.nix
+        ./modules/extra.nix
+        ./modules/fonts.nix
+        ./modules/gaming.nix
+        ./modules/mullvad.nix
+        ./modules/sdr.nix
+        ./modules/social.nix
+        ./modules/tailscale.nix
+        ./modules/vm.nix
+
+        ./modules/exclude.nix # for build failures
+      ];
+
+      desktopModules = [
+        ./modules/gnome.nix
+        ./modules/niri.nix
+      ];
+
       mkHost =
         {
           hostName,
@@ -81,7 +104,9 @@
                 };
               }
             )
-          ];
+          ]
+          ++ commonModules
+          ++ desktopModules;
         };
     in
     {
