@@ -44,7 +44,7 @@
           modules = [
             { networking.hostName = hostName; }
 
-            ./hosts/${hostName}/configuration.nix
+            ./hosts/${hostName}
             {
               my.boot.imageDir = boot-assets;
             }
