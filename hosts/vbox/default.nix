@@ -8,31 +8,6 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-
-    ../../modules/vbox-guest.nix
-
-    ../../modules/boot.nix
-    ../../modules/corepackages.nix
-    ../../modules/extra.nix
-    ../../modules/fonts.nix
-    # ../../modules/gaming.nix
-    # ../../modules/mullvad.nix
-    ../../modules/nix-utils.nix
-    # ../../modules/school.nix
-    # ../../modules/sdr.nix
-    # ../../modules/social.nix
-    # ../../modules/tailscale.nix
-    # ../../modules/temp.nix
-    # ../../modules/vm.nix
-
-    ../../modules/gnome.nix
-
-    ../../modules/exclude.nix
-  ];
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
   ];
 
   # boot.kernelPackages = pkgs.linuxPackages_latest;
