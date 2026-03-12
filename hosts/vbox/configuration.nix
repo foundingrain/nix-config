@@ -5,35 +5,37 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
 
-      ../../modules/boot.nix
-      ../../modules/corepackages.nix
-      ../../modules/extra.nix
-      ../../modules/fonts.nix
-      # ../../modules/gaming.nix
-      # ../../modules/mullvad.nix
-      ../../modules/nix-utils.nix
-      # ../../modules/school.nix
-      # ../../modules/sdr.nix
-      # ../../modules/social.nix
-      # ../../modules/tailscale.nix
-      # ../../modules/temp.nix
-      # ../../modules/vm.nix
+    ../../modules/vbox-guest.nix
 
-      ../../modules/gnome.nix
+    ../../modules/boot.nix
+    ../../modules/corepackages.nix
+    ../../modules/extra.nix
+    ../../modules/fonts.nix
+    # ../../modules/gaming.nix
+    # ../../modules/mullvad.nix
+    ../../modules/nix-utils.nix
+    # ../../modules/school.nix
+    # ../../modules/sdr.nix
+    # ../../modules/social.nix
+    # ../../modules/tailscale.nix
+    # ../../modules/temp.nix
+    # ../../modules/vm.nix
 
-      ../../modules/exclude.nix
-    ];
+    ../../modules/gnome.nix
+
+    ../../modules/exclude.nix
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "vbox"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -95,9 +97,12 @@
   users.users.neo = {
     isNormalUser = true;
     description = "neo";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -110,8 +115,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

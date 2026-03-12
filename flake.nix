@@ -89,7 +89,7 @@
         mashnix = mkHost { hostName = "mashnix"; };
         f15 = mkHost { hostName = "f15"; };
         thonknix = mkHost { hostName = "thonknix"; };
-	vbox = mkHost { hostName = "vbox"; };
+        vbox = mkHost { hostName = "vbox"; };
       };
     };
 }
