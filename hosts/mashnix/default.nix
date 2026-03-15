@@ -13,6 +13,8 @@
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  boot.initrd.availableKernelModules = [ "amdgpu" ];
+
   networking.hostName = "mashnix"; # Define your hostname.
 
   # Enable networking

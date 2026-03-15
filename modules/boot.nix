@@ -36,6 +36,8 @@ in
           };
         };
 
+        initrd.systemd.enable = true;
+
         plymouth = {
           enable = true;
           theme = "breeze";
@@ -46,6 +48,7 @@ in
         kernelParams = [
           "quiet"
           "splash"
+          "video=efifb:nobgrt"
         ];
       };
     }

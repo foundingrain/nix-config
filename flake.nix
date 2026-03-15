@@ -51,7 +51,7 @@
       ];
 
       desktopModules = [
-        ./modules/gnome.nix
+        ./modules/plasma.nix
         ./modules/niri.nix
       ];
 
