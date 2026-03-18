@@ -41,6 +41,7 @@
         ./modules/extra.nix
         ./modules/fonts.nix
         ./modules/gaming.nix
+        ./modules/keychron.nix
         ./modules/mullvad.nix
         ./modules/sdr.nix
         ./modules/social.nix
