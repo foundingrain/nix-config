@@ -52,7 +52,8 @@
       ];
 
       desktopModules = [
-        ./modules/plasma.nix
+        # ./modules/plasma.nix
+        ./modules/cosmic.nix
         ./modules/niri.nix
       ];
 
