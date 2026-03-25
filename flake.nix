@@ -38,6 +38,7 @@
         ./modules/boot.nix
         ./modules/corepackages.nix
         ./modules/development.nix
+        ./modules/distrobox.nix
         ./modules/extra.nix
         ./modules/fonts.nix
         ./modules/gaming.nix
@@ -52,8 +53,9 @@
       ];
 
       desktopModules = [
+        # ./modules/cosmic.nix
+        ./modules/gnome.nix
         # ./modules/plasma.nix
-        ./modules/cosmic.nix
         ./modules/niri.nix
       ];
 
