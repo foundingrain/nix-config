@@ -65,11 +65,12 @@
       mkHost =
         {
           hostName,
+          hmUser,
           system ? "x86_64-linux",
         }:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs hmUser; };
 
           modules = [
             { networking.hostName = hostName; }
@@ -82,34 +83,26 @@
             nix-index-database.nixosModules.default
 
             home-manager.nixosModules.home-manager
-            (
-              { config, ... }:
-              let
-                hmUser = if config.networking.hostName == "f15" then "stimkyyy" else "neo";
-              in
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.backupFileExtension = "hm-bak";
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "hm-bak";
+              home-manager.extraSpecialArgs = { inherit inputs hmUser; };
 
-                # Pass username to HM
-                home-manager.extraSpecialArgs = { inherit inputs hmUser; };
+              home-manager.users.${hmUser} = {
+                imports = [
+                  ./home.nix
+                  inputs.kickstart-nixvim.homeManagerModules.default
+                  nix-index-database.homeModules.default
+                  zen-browser.homeModules.beta
+                ];
 
-                home-manager.users.${hmUser} = {
-                  imports = [
-                    ./home.nix
-                    inputs.kickstart-nixvim.homeManagerModules.default
-                    nix-index-database.homeModules.default
-                    zen-browser.homeModules.beta
-                  ];
-
-                  programs.command-not-found.enable = false;
-                  programs.nixvim.enable = true;
-                  programs.nix-index.enable = true;
-                  programs.zen-browser.enable = true;
-                };
-              }
-            )
+                programs.command-not-found.enable = false;
+                programs.nixvim.enable = true;
+                programs.nix-index.enable = true;
+                programs.zen-browser.enable = true;
+              };
+            }
           ]
           ++ commonModules
           ++ desktopModules;
@@ -117,10 +110,22 @@
     in
     {
       nixosConfigurations = {
-        mashnix = mkHost { hostName = "mashnix"; };
-        f15 = mkHost { hostName = "f15"; };
-        thonknix = mkHost { hostName = "thonknix"; };
-        vbox = mkHost { hostName = "vbox"; };
+        mashnix = mkHost {
+          hostName = "mashnix";
+          hmUser = "neo";
+        };
+        f15 = mkHost {
+          hostName = "f15";
+          hmUser = "stimkyyy";
+        };
+        thonknix = mkHost {
+          hostName = "thonknix";
+          hmUser = "neo";
+        };
+        vbox = mkHost {
+          hostName = "vbox";
+          hmUser = "neo";
+        };
       };
     };
 }
