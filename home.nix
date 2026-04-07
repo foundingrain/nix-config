@@ -41,6 +41,7 @@ in
       name = "Adwaita";
       package = pkgs.gnome-themes-extra;
     };
+    gtk4.theme = null; # new behavior
   };
 
   programs = {
