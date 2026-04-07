@@ -32,7 +32,7 @@ in
     nwg-look
     pavucontrol
     sunsetr
-    swww
+    awww
     swaylock-effects
     swaylock-fancy
     swaynotificationcenter
