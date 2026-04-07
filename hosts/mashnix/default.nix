@@ -50,6 +50,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  hardware.sane.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -78,6 +79,8 @@
       "networkmanager"
       "wheel"
       "input"
+      "scanner"
+      "lp"
     ];
     packages = with pkgs; [
       bibata-cursors
