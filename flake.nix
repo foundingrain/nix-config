@@ -44,6 +44,7 @@
         ./modules/gaming.nix
         ./modules/keychron.nix
         ./modules/mullvad.nix
+        ./modules/printers.nix
         ./modules/sdr.nix
         ./modules/social.nix
         ./modules/tailscale.nix
@@ -75,7 +76,6 @@
             {
               my.boot.imageDir = boot-assets;
             }
-            # ./hosts/${hostName}/hardware-configuration.nix
 
             nix-index-database.nixosModules.default
 
