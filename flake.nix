@@ -47,6 +47,7 @@
         ./modules/printers.nix
         ./modules/sdr.nix
         ./modules/social.nix
+        ./modules/sunshine.nix
         ./modules/tailscale.nix
         ./modules/vm.nix
 
