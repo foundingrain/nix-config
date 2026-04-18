@@ -7,4 +7,6 @@
     capSysAdmin = true;
     openFirewall = true;
   };
+
+  hardware.uinput.enable = true;
 }

@@ -8,11 +8,11 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./windows-entry.nix
   ];
+
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
+  boot.initrd.luks.devices."luks-f818a6e4-273c-4d66-81ba-502418d13f26".device = "/dev/disk/by-uuid/f818a6e4-273c-4d66-81ba-502418d13f26";
   boot.initrd.availableKernelModules = [ "amdgpu" ];
 
   networking.hostName = "mashnix"; # Define your hostname.
@@ -79,6 +79,7 @@
       "networkmanager"
       "wheel"
       "input"
+      "uinput"
       "scanner"
       "lp"
     ];
