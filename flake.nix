@@ -48,6 +48,7 @@
         ./modules/sdr.nix
         ./modules/social.nix
         ./modules/sunshine.nix
+        ./modules/syncthing.nix
         ./modules/tailscale.nix
         ./modules/vm.nix
 
