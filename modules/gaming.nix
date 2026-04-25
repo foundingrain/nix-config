@@ -2,11 +2,11 @@
 
 {
   environment.systemPackages = with pkgs; [
-    bottles
+    # bottles
     gamescope
     goverlay
     heroic
-    lutris
+    # lutris
     mangohud
     protontricks
     protonup-qt
