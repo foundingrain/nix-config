@@ -57,8 +57,8 @@
 
       desktopModules = [
         # ./modules/cosmic.nix
-        # ./modules/gnome.nix
-        ./modules/plasma.nix
+        ./modules/gnome.nix
+        # ./modules/plasma.nix
         ./modules/niri.nix
       ];
 
