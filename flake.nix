@@ -34,6 +34,7 @@
     let
       commonModules = [
         ./modules/nix.nix
+        ./modules/flatpak.nix
 
         ./modules/boot.nix
         ./modules/corepackages.nix
