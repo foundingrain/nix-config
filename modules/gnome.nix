@@ -19,6 +19,7 @@
     gnomeExtensions.vertical-workspaces
     # gnomeExtensions.window-list
     gthumb
+    refine
     zenity
   ];
 
