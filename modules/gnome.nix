@@ -9,6 +9,7 @@
     gnomeExtensions.appindicator
     gnomeExtensions.arcmenu
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.caffeine
     gnomeExtensions.dash-to-dock
     gnomeExtensions.dash-to-panel
     gnomeExtensions.notification-timeout
