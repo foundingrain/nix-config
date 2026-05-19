@@ -14,9 +14,6 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.availableKernelModules = [ "amdgpu" ];
 
-  # For Sunshine virtual monitor
-  boot.kernelParams = [ "video=HDMI-A-1:2560x1440@144D" ];
-
   networking.hostName = "mashnix"; # Define your hostname.
 
   # Enable networking
