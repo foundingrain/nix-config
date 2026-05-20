@@ -12,6 +12,11 @@
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     kickstart-nixvim.url = "github:JMartJonesy/kickstart.nixvim";
     zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
 
@@ -57,10 +62,10 @@
       ];
 
       desktopModules = [
-        # ./modules/cosmic.nix
         ./modules/gnome.nix
-        # ./modules/plasma.nix
         ./modules/niri.nix
+        ./modules/mango.nix
+        ./modules/noctalia.nix
       ];
 
       mkHost =
