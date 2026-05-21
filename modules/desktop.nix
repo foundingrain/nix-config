@@ -6,7 +6,8 @@
 {
   imports = [
     ./gnome.nix
-    ./hyprland.nix
+
+    # ./hyprland.nix
     ./mango.nix
     ./niri.nix
     ./noctalia.nix
