@@ -1,10 +1,17 @@
-{ pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  programs.mangowc.enable = true;
+  config = lib.mkIf config.neos.desktop.enable {
+    programs.mangowc.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    foot
-    rofi
-  ];
+    environment.systemPackages = with pkgs; [
+      foot
+      rofi
+    ];
+  };
 }

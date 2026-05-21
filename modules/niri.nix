@@ -18,56 +18,58 @@ let
       "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
 in
 {
-  environment.systemPackages = with pkgs; [
-    alacritty
-    blueman
-    brightnessctl
-    cliphist
-    ffmpegthumbnailer
-    fuzzel
-    kanshi
-    nautilus
-    networkmanagerapplet
-    niriswitcher
-    nwg-look
-    pavucontrol
-    sunsetr
-    awww
-    swaylock-effects
-    swaylock-fancy
-    swaynotificationcenter
-    totem
-    xwayland-satellite
-    waybar
-    wlogout
-  ];
+  config = lib.mkIf config.neos.desktop.enable {
+    environment.systemPackages = with pkgs; [
+      alacritty
+      blueman
+      brightnessctl
+      cliphist
+      ffmpegthumbnailer
+      fuzzel
+      kanshi
+      nautilus
+      networkmanagerapplet
+      niriswitcher
+      nwg-look
+      pavucontrol
+      sunsetr
+      awww
+      swaylock-effects
+      swaylock-fancy
+      swaynotificationcenter
+      totem
+      xwayland-satellite
+      waybar
+      wlogout
+    ];
 
-  programs = {
-    niri.enable = true;
-    # waybar.enable = true;
-  };
-
-  services = {
-    blueman.enable = true;
-  };
-
-  # Install appropriate polkit
-  systemd.user.services.polkit-auth-agent = {
-    description = "Polkit authentication agent for niri";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = polkitExec;
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStopSec = 10;
+    programs = {
+      niri.enable = true;
+      # waybar.enable = true;
     };
-  };
 
-  # For populating file associations in plasma apps in niri
-  environment.etc."/xdg/menus/applications.menu" = lib.mkIf isPlasma {
-    text = builtins.readFile "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+    services = {
+      blueman.enable = true;
+    };
+
+    # Install appropriate polkit
+    systemd.user.services.polkit-auth-agent = {
+      description = "Polkit authentication agent for niri";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = polkitExec;
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+
+    # For populating file associations in plasma apps in niri
+    environment.etc."/xdg/menus/applications.menu" = lib.mkIf isPlasma {
+      text = builtins.readFile "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
+    };
   };
 }

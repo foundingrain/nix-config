@@ -1,35 +1,43 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  environment.systemPackages = with pkgs; [
-    bibata-cursors
-    gnome-shell-extensions
-    gnome-tweaks
-    gnomeExtensions.app-icons-taskbar
-    gnomeExtensions.appindicator
-    gnomeExtensions.arcmenu
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.caffeine
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.dash-to-panel
-    gnomeExtensions.notification-timeout
-    # gnomeExtensions.paperwm
-    gnomeExtensions.system-monitor-next
-    gnomeExtensions.tiling-assistant
-    gnomeExtensions.user-themes
-    gnomeExtensions.vertical-workspaces
-    # gnomeExtensions.window-list
-    gthumb
-    refine
-    zenity
-  ];
+  config = lib.mkIf config.neos.desktop.enable {
 
-  services.xserver.enable = true;
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+    environment.systemPackages = with pkgs; [
+      bibata-cursors
+      gnome-shell-extensions
+      gnome-tweaks
+      gnomeExtensions.app-icons-taskbar
+      gnomeExtensions.appindicator
+      gnomeExtensions.arcmenu
+      gnomeExtensions.blur-my-shell
+      gnomeExtensions.caffeine
+      gnomeExtensions.dash-to-dock
+      gnomeExtensions.dash-to-panel
+      gnomeExtensions.notification-timeout
+      # gnomeExtensions.paperwm
+      gnomeExtensions.system-monitor-next
+      gnomeExtensions.tiling-assistant
+      gnomeExtensions.user-themes
+      gnomeExtensions.vertical-workspaces
+      # gnomeExtensions.window-list
+      gthumb
+      refine
+      zenity
+    ];
 
-  programs = {
-    dconf.enable = true;
-    kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
+    services.xserver.enable = true;
+    services.displayManager.gdm.enable = true;
+    services.desktopManager.gnome.enable = true;
+
+    programs = {
+      dconf.enable = true;
+      kdeconnect.package = pkgs.gnomeExtensions.gsconnect;
+    };
   };
 }

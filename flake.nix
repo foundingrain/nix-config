@@ -58,14 +58,9 @@
         ./modules/tailscale.nix
         ./modules/vm.nix
 
-        ./modules/exclude.nix # for build failures
-      ];
+        ./modules/desktop.nix
 
-      desktopModules = [
-        ./modules/gnome.nix
-        ./modules/niri.nix
-        ./modules/mango.nix
-        ./modules/noctalia.nix
+        ./modules/exclude.nix # for build failures
       ];
 
       mkHost =
@@ -110,8 +105,7 @@
               };
             }
           ]
-          ++ commonModules
-          ++ desktopModules;
+          ++ commonModules;
         };
     in
     {
