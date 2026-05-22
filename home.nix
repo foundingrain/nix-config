@@ -17,6 +17,8 @@
   };
   home.shellAliases = {
     gs = "git status";
+    ts = "tailscale";
+    mvpn = "mullvad";
   };
 
   gtk = {
@@ -32,6 +34,60 @@
       package = pkgs.gnome-themes-extra;
     };
     gtk4.theme = null; # new behavior
+  };
+
+  dconf.settings = {
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+      enabled-extensions = [
+        pkgs.gnomeExtensions.appindicator.extensionUuid
+        pkgs.gnomeExtensions.blur-my-shell.extensionUuid
+        pkgs.gnomeExtensions.caffeine.extensionUuid
+        pkgs.gnomeExtensions.launch-new-instance.extensionUuid
+        pkgs.gnomeExtensions.gsconnect.extensionUuid
+        pkgs.gnomeExtensions.system-monitor-next.extensionUuid
+        pkgs.gnomeExtensions.tiling-assistant.extensionUuid
+      ];
+    };
+
+    "org/gnome/shell/extensions/tiling-assistant" = {
+      enable-raise-tile-group = false;
+      enable-tiling-popup = false;
+      maximize-with-gap = true;
+      single-screen-gap = 12;
+      window-gap = 12;
+    };
+
+    "org/gnome/desktop/interface" = {
+      accent-color = "orange";
+      color-scheme = "prefer-dark";
+      enable-hot-corners = true;
+    };
+
+    "org/gnome/desktop/wm/keybindings" = {
+      activate-window-menu = [ ];
+      close = [ "<Super>q" ];
+      switch-input-source = [ ];
+      switch-input-source-backward = [ ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        # Register custom keybindings
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+      ];
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>Return";
+      command = "kitty";
+      name = "Kitty";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Super>e";
+      command = "nautilus";
+      name = "Launch File Manager";
+    };
   };
 
   programs = {

@@ -9,9 +9,6 @@
   config = lib.mkIf config.neos.desktop.enable {
 
     environment.systemPackages = with pkgs; [
-      bibata-cursors
-      gnome-shell-extensions
-      gnome-tweaks
       gnomeExtensions.app-icons-taskbar
       gnomeExtensions.appindicator
       gnomeExtensions.arcmenu
@@ -26,6 +23,10 @@
       gnomeExtensions.user-themes
       gnomeExtensions.vertical-workspaces
       # gnomeExtensions.window-list
+
+      bibata-cursors
+      gnome-shell-extensions
+      gnome-tweaks
       gthumb
       refine
       zenity
