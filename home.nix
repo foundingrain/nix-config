@@ -38,9 +38,14 @@
   };
 
   dconf.settings = {
+    "org/gnome/mutter" = {
+      experimental-features = [ "variable-refresh-rate" ];
+    };
+
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
+        pkgs.gnomeExtensions.arcmenu.extensionUuid
         pkgs.gnomeExtensions.appindicator.extensionUuid
         pkgs.gnomeExtensions.blur-my-shell.extensionUuid
         pkgs.gnomeExtensions.caffeine.extensionUuid
