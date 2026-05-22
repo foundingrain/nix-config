@@ -9,6 +9,8 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  neos.desktop.enable = true;
+
   networking.hostName = "f15"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
