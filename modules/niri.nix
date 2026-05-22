@@ -45,11 +45,6 @@ in
 
     programs = {
       niri.enable = true;
-      # waybar.enable = true;
-    };
-
-    services = {
-      blueman.enable = true;
     };
 
     # Install appropriate polkit

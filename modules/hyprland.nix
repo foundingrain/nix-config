@@ -10,8 +10,6 @@
     programs = {
       hyprland.enable = true;
       hyprland.xwayland.enable = true;
-      hyprlock.enable = true;
-      waybar.enable = true;
     };
 
     xdg.portal = {
@@ -20,18 +18,19 @@
       config.common.default = "*";
     };
 
-    services.blueman.enable = true;
-
     environment.systemPackages = with pkgs; [
       awww
+      blueman
       brightnessctl
       cliphist
       fuzzel
+      hyprlock
       hyprpaper
       hyprpicker
       libnotify
       networkmanagerapplet
       swaynotificationcenter
+      waybar
       wlogout
       wl-clipboard
       wofi
