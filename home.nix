@@ -13,6 +13,7 @@
   home.homeDirectory = "/home/${hmUser}";
   home.sessionVariables = {
     EDITOR = "nvim";
+    VISUAL = "nvim";
     SAL_USE_VCLPLUGIN = "gtk3";
   };
   home.shellAliases = {
@@ -73,7 +74,6 @@
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
-        # Register custom keybindings
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
       ];
@@ -143,10 +143,11 @@
 
     ranger = {
       enable = true;
-      extraConfig = ''
-        set preview_images true
-        set preview_images_method kitty
-      '';
+      settings = {
+        editor = "nvim";
+        preview_images = true;
+        preview_images_method = "kitty";
+      };
     };
 
     starship = {
