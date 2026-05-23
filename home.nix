@@ -93,7 +93,7 @@
 
     "org/gnome/desktop/wm/keybindings" = {
       activate-window-menu = [ ];
-      close = [ "<Alt>q" ];
+      close = [ "<Super>q" ];
       move-to-workspace-1 = [ "<Shift><Super>1" ];
       move-to-workspace-2 = [ "<Shift><Super>2" ];
       move-to-workspace-3 = [ "<Shift><Super>3" ];
@@ -113,12 +113,12 @@
       ];
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      binding = "<Alt>Return";
+      binding = "<Super>Return";
       command = "kitty";
       name = "Kitty";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-      binding = "<Alt>e";
+      binding = "<Super>e";
       command = "nautilus";
       name = "Launch File Manager";
     };
