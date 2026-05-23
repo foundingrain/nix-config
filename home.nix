@@ -56,6 +56,15 @@
       ];
     };
 
+    "org/gnome/shell/extensions/arcmenu" = {
+      arcmenu-hotkey = [
+        "<Alt>space"
+        "<Super>space"
+      ];
+      custom-menu-button-text = "NeosOS";
+      menu-button-appearance = "Text";
+    };
+
     "org/gnome/shell/extensions/tiling-assistant" = {
       enable-raise-tile-group = false;
       enable-tiling-popup = false;
@@ -64,15 +73,27 @@
       window-gap = 12;
     };
 
+    "org/gnome/shell/keybindings" = {
+      switch-to-application-1 = [ ];
+      switch-to-application-2 = [ ];
+      switch-to-application-3 = [ ];
+      switch-to-application-4 = [ ];
+    };
+
     "org/gnome/desktop/interface" = {
       accent-color = "orange";
       color-scheme = "prefer-dark";
       enable-hot-corners = true;
     };
 
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = "close,minimize,maximize,icon:";
+      resize-with-right-button = true;
+    };
+
     "org/gnome/desktop/wm/keybindings" = {
       activate-window-menu = [ ];
-      close = [ "<Super>q" ];
+      close = [ "<Alt>q" ];
       move-to-workspace-1 = [ "<Shift><Super>1" ];
       move-to-workspace-2 = [ "<Shift><Super>2" ];
       move-to-workspace-3 = [ "<Shift><Super>3" ];
@@ -92,12 +113,12 @@
       ];
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      binding = "<Super>Return";
+      binding = "<Alt>Return";
       command = "kitty";
       name = "Kitty";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-      binding = "<Super>e";
+      binding = "<Alt>e";
       command = "nautilus";
       name = "Launch File Manager";
     };
