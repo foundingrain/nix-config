@@ -28,7 +28,7 @@
     cursorTheme = {
       name = "Vimix-white-cursors";
       package = pkgs.vimix-cursors;
-      size = 16;
+      size = 24;
     };
     iconTheme = {
       name = "Adwaita";
