@@ -9,6 +9,8 @@
     ./hardware-configuration.nix
   ];
 
+  neos.desktop.enable = true;
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "thonknix"; # Define your hostname.
