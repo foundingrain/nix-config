@@ -54,7 +54,11 @@ in
     }
 
     (lib.mkIf (limineLogo != null) {
-      boot.loader.limine.style.wallpapers = [ limineLogo ];
+      boot.loader.limine.style = {
+        # backdrop = "443F3D";
+        wallpapers = [ limineLogo ];
+        # wallpaperStyle = "centered";
+      };
     })
 
     (lib.mkIf (plymouthLogo != null) {
