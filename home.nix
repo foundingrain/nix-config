@@ -22,7 +22,7 @@
     mvpn = "mullvad";
   };
 
-  gtk = {
+  gtk = lib.mkIf config.neos.desktop.gnome.enable {
     enable = true;
     colorScheme = "dark";
     cursorTheme = {
@@ -37,7 +37,7 @@
     gtk4.theme = null; # new behavior
   };
 
-  dconf.settings = {
+  dconf.settings = lib.mkIf config.neos.desktop.gnome.enable {
     "org/gnome/mutter" = {
       experimental-features = [ "variable-refresh-rate" ];
     };

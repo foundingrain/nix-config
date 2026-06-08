@@ -10,7 +10,11 @@
     ./hardware-configuration.nix
   ];
 
-  neos.desktop.enable = true;
+  neos.desktop = {
+    enable = true;
+    gnome.enable = false;
+    plasma.enable = true;
+  };
 
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;

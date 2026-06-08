@@ -6,7 +6,7 @@
 }:
 
 {
-  config = lib.mkIf config.neos.desktop.enable {
+  config = lib.mkIf config.neos.desktop.gnome.enable {
 
     environment.systemPackages = with pkgs; [
       gnomeExtensions.app-icons-taskbar
