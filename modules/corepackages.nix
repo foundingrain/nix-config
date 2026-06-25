@@ -23,5 +23,6 @@
     vlc
     wget
     wl-clipboard
+    yazi
   ];
 }
