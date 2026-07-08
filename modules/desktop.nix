@@ -9,9 +9,9 @@
     ./plasma.nix
 
     # ./hyprland.nix
-    ./mango.nix
-    ./niri.nix
-    ./noctalia.nix
+    # ./mango.nix
+    # ./niri.nix
+    # ./noctalia.nix
   ];
 
   options.neos.desktop = {

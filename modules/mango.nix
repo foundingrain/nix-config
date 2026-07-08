@@ -7,7 +7,7 @@
 
 {
   config = lib.mkIf config.neos.desktop.enable {
-    programs.mangowc.enable = true;
+    programs.mango.enable = true;
 
     environment.systemPackages = with pkgs; [
       foot
