@@ -3,11 +3,11 @@
     "boot-assets": {
       "flake": false,
       "locked": {
-        "lastModified": 1783701427,
-        "narHash": "sha256-XE6x5Q18J/8rS71PY1VKwkeY+JzEiQqyFNbr678nTbw=",
+        "lastModified": 1784499399,
+        "narHash": "sha256-XM+kmllcGL2Q6h6yquGk79xJMfrf03btHaqldhvR2bA=",
         "ref": "refs/heads/main",
-        "rev": "92fd070e6352f21231759597442eea9feec8aa54",
-        "revCount": 11,
+        "rev": "9a6eceacd3e6d4a9afb3e4b591aba24d05723582",
+        "revCount": 13,
         "type": "git",
         "url": "ssh://git@github.com/foundingrain/private-boot-assets.git"
       },
