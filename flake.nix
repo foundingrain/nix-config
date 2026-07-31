@@ -17,7 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    kickstart-nixvim.url = "github:JMartJonesy/kickstart.nixvim";
+    kickstart-nixvim = {
+      url = "github:nix-community/kickstart-nix.nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
 
     boot-assets = {
@@ -31,6 +35,7 @@
       self,
       nixpkgs,
       home-manager,
+      kickstart-nixvim,
       nix-index-database,
       zen-browser,
       boot-assets,
@@ -74,7 +79,10 @@
           specialArgs = { inherit inputs hmUser; };
 
           modules = [
-            { networking.hostName = hostName; }
+            {
+              networking.hostName = hostName;
+              nixpkgs.config.allowUnfree = true;
+            }
 
             ./hosts/${hostName}
             {
@@ -93,13 +101,12 @@
               home-manager.users.${hmUser} = {
                 imports = [
                   ./home.nix
-                  inputs.kickstart-nixvim.homeManagerModules.default
                   nix-index-database.homeModules.default
                   zen-browser.homeModules.beta
                 ];
 
                 programs.command-not-found.enable = false;
-                programs.nixvim.enable = true;
+                # programs.nixvim.enable = true;
                 programs.nix-index.enable = true;
                 programs.zen-browser.enable = true;
               };

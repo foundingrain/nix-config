@@ -4,6 +4,7 @@
   pkgs,
   osConfig,
   hmUser,
+  inputs,
   ...
 }:
 
@@ -22,6 +23,9 @@
     ts = "tailscale";
     mvpn = "mullvad";
   };
+  home.packages = [
+    inputs.kickstart-nixvim.packages.${pkgs.system}.default
+  ];
 
   gtk = lib.mkIf osConfig.neos.desktop.gnome.enable {
     enable = true;
@@ -165,24 +169,6 @@
         confirm_os_window_close = -1;
       };
       themeFile = "Cyberpunk-Neon";
-    };
-
-    nixvim = {
-      enable = true;
-      plugins.treesitter = {
-        enable = true;
-        highlight.enable = true;
-        indent.enable = true;
-      };
-    };
-
-    ranger = {
-      enable = true;
-      settings = {
-        editor = "nvim";
-        preview_images = true;
-        preview_images_method = "kitty";
-      };
     };
 
     starship = {
