@@ -17,11 +17,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    kickstart-nixvim = {
-      url = "github:nix-community/kickstart-nix.nvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
 
     boot-assets = {
@@ -35,7 +30,6 @@
       self,
       nixpkgs,
       home-manager,
-      kickstart-nixvim,
       nix-index-database,
       zen-browser,
       boot-assets,
@@ -106,7 +100,6 @@
                 ];
 
                 programs.command-not-found.enable = false;
-                # programs.nixvim.enable = true;
                 programs.nix-index.enable = true;
                 programs.zen-browser.enable = true;
               };

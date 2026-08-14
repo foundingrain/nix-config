@@ -6,6 +6,7 @@
       enable = true;
       # rememberLastEntry = true; # might not exist?
       # limine.style.wallpapers = [  ];
+      style.wallpaperStyle = "centered";
     };
   };
 }

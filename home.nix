@@ -23,9 +23,6 @@
     ts = "tailscale";
     mvpn = "mullvad";
   };
-  home.packages = [
-    inputs.kickstart-nixvim.packages.${pkgs.system}.default
-  ];
 
   gtk = lib.mkIf osConfig.neos.desktop.gnome.enable {
     enable = true;
@@ -92,7 +89,7 @@
     };
 
     "org/gnome/desktop/wm/preferences" = {
-      button-layout = "close,minimize,maximize,icon:";
+      button-layout = "icon:minimize,maximize,close";
       resize-with-right-button = true;
     };
 
