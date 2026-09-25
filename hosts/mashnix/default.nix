@@ -8,13 +8,12 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../modules/cosmic.nix
   ];
 
   neos.desktop = {
     enable = true;
     gnome.enable = false;
-    plasma.enable = false;
+    plasma.enable = true;
   };
 
   # Use latest kernel
