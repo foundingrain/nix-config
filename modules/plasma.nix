@@ -16,7 +16,7 @@
     environment.systemPackages = with pkgs; [
       kdePackages.kdeplasma-addons
 
-      libreoffice-qt6-fresh
+      libreoffice-qt
       # qt6ct
     ];
   };

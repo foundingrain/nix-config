@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     kdePackages.kdenlive
     krita
-    libreoffice-fresh
+    libreoffice
     obs-studio
     qbittorrent
     qpwgraph
