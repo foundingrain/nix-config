@@ -43,8 +43,8 @@
     "org/gnome/mutter" = {
       experimental-features = [ "variable-refresh-rate" ];
     };
-
     "org/gnome/shell" = {
+      always-show-log-out = true;
       disable-user-extensions = false;
       enabled-extensions = [
         pkgs.gnomeExtensions.arcmenu.extensionUuid
