@@ -7,15 +7,13 @@
 {
   imports = [
     ./hardware-configuration.nix
-
-    ../../modules/cosmic.nix
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   neos.desktop = {
     enable = true;
-    gnome.enable = false;
+    gnome.enable = true;
     plasma.enable = false;
   };
 
