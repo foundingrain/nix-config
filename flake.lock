@@ -3,11 +3,11 @@
     "boot-assets": {
       "flake": false,
       "locked": {
-        "lastModified": 1785684559,
-        "narHash": "sha256-y9cMgbmGvxJ4UYGO4zbFAnk8qT5HnrF+tCCkWnxwKus=",
+        "lastModified": 1790757222,
+        "narHash": "sha256-XM+kmllcGL2Q6h6yquGk79xJMfrf03btHaqldhvR2bA=",
         "ref": "refs/heads/main",
-        "rev": "092a2f07da250f28c1ca7defdc5505c3cd755350",
-        "revCount": 14,
+        "rev": "de66ec4042bb93a6c6e50bf291b215bf42575d4a",
+        "revCount": 15,
         "type": "git",
         "url": "ssh://git@github.com/foundingrain/private-boot-assets.git"
       },
@@ -23,11 +23,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790726651,
-        "narHash": "sha256-zvULbL+SmLPPB1PwORjYU61W5SulQLjzUxFp4Vjl6B0=",
+        "lastModified": 1790742230,
+        "narHash": "sha256-5399J1/O3DyLSsYGVa950JtOUDB9Reqvy7FhfDuTVzk=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b0d0106ef6a7c7c36ebff9a74f803d23d9b383d3",
+        "rev": "0aefa652eb6fd8b7396af25e8c81cb0790f12cc2",
         "type": "github"
       },
       "original": {
