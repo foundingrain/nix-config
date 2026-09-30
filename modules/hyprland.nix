@@ -14,8 +14,11 @@
 
     xdg.portal = {
       enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-      config.common.default = "*";
+      extraPortals = [
+      	pkgs.xdg-desktop-portal-hyprland
+	pkgs.xdg-desktop-portal-gtk
+      ];
+      config.common.default = [ "hyprland" "gtk" ];
     };
 
     environment.systemPackages = with pkgs; [
@@ -24,11 +27,13 @@
       brightnessctl
       cliphist
       fuzzel
+      hyprlauncher
       hyprlock
       hyprpaper
       hyprpicker
       libnotify
       networkmanagerapplet
+      pavucontrol
       swaynotificationcenter
       waybar
       wlogout
