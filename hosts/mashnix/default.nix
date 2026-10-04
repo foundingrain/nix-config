@@ -8,13 +8,13 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    # ../../modules/hyprland.nix
+    ../../modules/hyprland.nix
   ];
 
   neos.desktop = {
     enable = true;
-    gnome.enable = false;
-    plasma.enable = true;
+    gnome.enable = true;
+    plasma.enable = false;
   };
 
   # Use latest kernel

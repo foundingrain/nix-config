@@ -6,6 +6,7 @@
     easyeffects
     signal-desktop
     telegram-desktop
+    vesktop
   ];
   programs = {
     noisetorch.enable = true;
